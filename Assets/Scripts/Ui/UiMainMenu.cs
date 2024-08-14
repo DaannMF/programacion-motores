@@ -6,6 +6,8 @@ public class UiMainMenu : MonoBehaviour {
     [SerializeField] private Button playButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button creditsButton;
+    [SerializeField] private Button closeButton;
+    [SerializeField] private Button exitButton;
 
     [Header("Panels")]
     [SerializeField] private GameObject pausePanel;
@@ -16,8 +18,10 @@ public class UiMainMenu : MonoBehaviour {
 
     private void Awake() {
         playButton.onClick.AddListener(OnPlayButtonClicked);
+        closeButton.onClick.AddListener(OnPlayButtonClicked);
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         creditsButton.onClick.AddListener(OnCreditsButtonClicked);
+        exitButton.onClick.AddListener(OnExitButtonClicked);
     }
 
     private void Update() {
@@ -30,8 +34,10 @@ public class UiMainMenu : MonoBehaviour {
 
     private void OnDestroy() {
         playButton.onClick.RemoveListener(OnPlayButtonClicked);
+        closeButton.onClick.RemoveListener(OnPlayButtonClicked);
         settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
         creditsButton.onClick.RemoveListener(OnCreditsButtonClicked);
+        exitButton.onClick.RemoveListener(OnExitButtonClicked);
     }
 
     private void OnPlayButtonClicked() {
@@ -46,5 +52,14 @@ public class UiMainMenu : MonoBehaviour {
     private void OnCreditsButtonClicked() {
         mainPanel.SetActive(false);
         creditsPanel.SetActive(true);
+    }
+
+    private void OnExitButtonClicked() {
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+
     }
 }

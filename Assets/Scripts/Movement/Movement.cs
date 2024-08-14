@@ -4,8 +4,9 @@ public class Movement : MonoBehaviour {
 
     [Header("Handles the movement logic")]
     const float MAX_SPEED = 1f;
-    const float MIN_SPEED = 1f;
-    private float speed = 0.01F;
+    const float MIN_SPEED = 0.1f;
+    [SerializeField] private float speed = 0.01f;
+
     [SerializeField] private KeyCode keyUp = KeyCode.W;
     [SerializeField] private KeyCode keyDown = KeyCode.S;
     [SerializeField] private KeyCode keyRigth = KeyCode.D;
