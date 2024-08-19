@@ -15,7 +15,6 @@ public class UiMainMenu : MonoBehaviour {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject creditsPanel;
 
-
     private void Awake() {
         playButton.onClick.AddListener(OnPlayButtonClicked);
         closeButton.onClick.AddListener(OnPlayButtonClicked);
