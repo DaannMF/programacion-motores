@@ -18,7 +18,6 @@ public class UISettingsMenu : MonoBehaviour {
     [SerializeField] private Button backButton;
     [SerializeField] private Button closeButton;
 
-
     [Header("TextFields")]
     [SerializeField] private TextMeshProUGUI textField1;
     [SerializeField] private TextMeshProUGUI textField2;
@@ -33,7 +32,6 @@ public class UISettingsMenu : MonoBehaviour {
 
         this.textField1.text = playerMovement1.GetMovementSeed().ToString("n2");
         this.textField2.text = playerMovement1.GetMovementSeed().ToString("n2");
-
 
         slider1.onValueChanged.AddListener(OnSliderValueChange1);
         slider2.onValueChanged.AddListener(OnSliderValueChange2);

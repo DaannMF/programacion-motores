@@ -10,7 +10,6 @@ public class UICreditsMenu : MonoBehaviour {
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject creditsPanel;
 
-
     private void Awake() {
         closeButton.onClick.AddListener(OnCloseButtonClicked);
     }
