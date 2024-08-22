@@ -34,7 +34,6 @@ public class UISettingsMenu : MonoBehaviour {
         this.textField1.text = playerMovement1.GetMovementSeed().ToString("n2");
         this.textField2.text = playerMovement1.GetMovementSeed().ToString("n2");
 
-
         slider1.onValueChanged.AddListener(OnSliderValueChange1);
         slider2.onValueChanged.AddListener(OnSliderValueChange2);
 

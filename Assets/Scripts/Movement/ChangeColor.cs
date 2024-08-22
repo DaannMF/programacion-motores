@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeColor : MonoBehaviour {
@@ -13,10 +11,8 @@ public class ChangeColor : MonoBehaviour {
     }
 
     void Update() {
-
         if (Input.GetKeyUp(keyChangeColor)) {
             this.spriteRenderer.color = Random.ColorHSV();
         }
-
     }
 }

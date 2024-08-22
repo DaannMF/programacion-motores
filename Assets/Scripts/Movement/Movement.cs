@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour {
 
@@ -16,25 +17,27 @@ public class Movement : MonoBehaviour {
     void Update() {
 
         Vector3 pos = transform.position;
+        float deltaSpeed = speed * Time.deltaTime * 1000;
+
 
         // Up
         if (Input.GetKey(keyUp)) {
-            pos.y += speed;
+            pos.y += deltaSpeed;
         }
 
         // Down
         if (Input.GetKey(keyDown)) {
-            pos.y -= speed;
+            pos.y -= deltaSpeed;
         }
 
         // Left
         if (Input.GetKey(keyLeft)) {
-            pos.x -= speed;
+            pos.x -= deltaSpeed;
         }
 
         // Rigth
         if (Input.GetKey(keyRigth)) {
-            pos.x += speed;
+            pos.x += deltaSpeed;
         }
 
         transform.position = pos;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotate : MonoBehaviour {
@@ -11,7 +9,6 @@ public class Rotate : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
         // Rotate Left
         if (Input.GetKeyDown(keyRotationLeft)) {
             transform.Rotate(0, 0, degrees);
@@ -19,7 +16,7 @@ public class Rotate : MonoBehaviour {
 
         // Rotate Rigth
         if (Input.GetKeyDown(keyRotationRigth)) {
-            transform.Rotate(0, 0, degrees * -1);
+            transform.Rotate(0, 0, -degrees);
         }
 
     }
