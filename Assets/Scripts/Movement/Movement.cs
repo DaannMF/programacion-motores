@@ -7,10 +7,9 @@ public class Movement : MonoBehaviour {
     const float MAX_SPEED = 1f;
     const float MIN_SPEED = 0.1f;
     [SerializeField] private float speed = 0.01f;
-
     [SerializeField] private KeyCode keyUp = KeyCode.W;
     [SerializeField] private KeyCode keyDown = KeyCode.S;
-    [SerializeField] private KeyCode keyRigth = KeyCode.D;
+    [SerializeField] private KeyCode keyRight = KeyCode.D;
     [SerializeField] private KeyCode keyLeft = KeyCode.A;
 
     // Update is called once per frame
@@ -35,8 +34,8 @@ public class Movement : MonoBehaviour {
             pos.x -= deltaSpeed;
         }
 
-        // Rigth
-        if (Input.GetKey(keyRigth)) {
+        // Right
+        if (Input.GetKey(keyRight)) {
             pos.x += deltaSpeed;
         }
 
