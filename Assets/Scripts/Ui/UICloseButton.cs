@@ -6,6 +6,10 @@ public class UICloseButton : MonoBehaviour {
     [SerializeField] private Button closeButton;
 
     private void Awake() {
+        PositionCloseButton();
+    }
+
+    private void PositionCloseButton() {
         RectTransform rt = closeButton.GetComponent<RectTransform>();
 
         Vector3[] v = new Vector3[4];
