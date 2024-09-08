@@ -2,38 +2,37 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour {
+    const float MAX_SPEED = 6f;
+    const float MIN_SPEED = 1.5f;
+    private Rigidbody2D rigidBody;
 
-    [Header("Handles the movement logic")]
-    const float MAX_SPEED = 1f;
-    const float MIN_SPEED = 0.1f;
-    [SerializeField] private float speed = 0.01f;
+    [SerializeField] private float speed = 1f;
 
     [Header("Map Keys")]
     [SerializeField] private KeyCode keyUp = KeyCode.W;
     [SerializeField] private KeyCode keyDown = KeyCode.S;
+
+    private void Awake() {
+        this.rigidBody = GetComponent<Rigidbody2D>();
+        this.SetMovementSeed(MIN_SPEED);
+    }
 
     void Update() {
         Move();
     }
 
     private void Move() {
-
-        Vector3 pos = transform.position;
         float deltaSpeed = speed * Time.deltaTime * 1000;
-
 
         // Up
         if (Input.GetKey(keyUp)) {
-            pos.y += deltaSpeed;
+            this.rigidBody.AddForce(Vector2.up * deltaSpeed);
         }
 
         // Down
         if (Input.GetKey(keyDown)) {
-            pos.y -= deltaSpeed;
+            this.rigidBody.AddForce(Vector2.down * deltaSpeed);
         }
-
-
-        transform.position = pos;
     }
 
     public float GetMovementSeed() {

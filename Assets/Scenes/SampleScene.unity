@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyRotationLeft: 113
-  keyRotationRigth: 101
+  keyRotationRight: 101
 --- !u!114 &189878390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,8 +493,6 @@ MonoBehaviour:
   speed: 0.01
   keyUp: 119
   keyDown: 115
-  keyRight: 100
-  keyLeft: 97
 --- !u!1 &213567611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,11 +1575,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 744135355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 486.91156, y: -293.96442}
-  m_SizeDelta: {x: 145.82312, y: 35}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 35, y: 35}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &692653974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1796,6 +1794,7 @@ GameObject:
   - component: {fileID: 744135355}
   - component: {fileID: 744135357}
   - component: {fileID: 744135356}
+  - component: {fileID: 744135358}
   m_Layer: 5
   m_Name: Panel Main
   m_TagString: Untagged
@@ -1821,7 +1820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.000030517578, y: -0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744135356
@@ -1862,6 +1861,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744135354}
   m_CullTransparentMesh: 1
+--- !u!114 &744135358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744135354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b79ea5fd0c7041e1b3fd46afb77e0c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentRect: {fileID: 1970879171}
+  closeButton: {fileID: 692653974}
 --- !u!1 &777664839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +2010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyRotationLeft: 113
-  keyRotationRigth: 101
+  keyRotationRight: 101
 --- !u!114 &882117314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,8 +2026,6 @@ MonoBehaviour:
   speed: 0.01
   keyUp: 119
   keyDown: 115
-  keyRight: 100
-  keyLeft: 97
 --- !u!1 &886924864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,6 +2173,7 @@ GameObject:
   - component: {fileID: 909460300}
   - component: {fileID: 909460299}
   - component: {fileID: 909460301}
+  - component: {fileID: 909460302}
   m_Layer: 5
   m_Name: Panel Credits
   m_TagString: Untagged
@@ -2248,6 +2260,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &909460302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909460297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b79ea5fd0c7041e1b3fd46afb77e0c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentRect: {fileID: 1138319805}
+  closeButton: {fileID: 413289506}
 --- !u!1 &913353188
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,6 +4031,7 @@ GameObject:
   - component: {fileID: 1620353446}
   - component: {fileID: 1620353448}
   - component: {fileID: 1620353447}
+  - component: {fileID: 1620353449}
   m_Layer: 5
   m_Name: Panel Settings
   m_TagString: Untagged
@@ -4071,6 +4098,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620353445}
   m_CullTransparentMesh: 1
+--- !u!114 &1620353449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620353445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b79ea5fd0c7041e1b3fd46afb77e0c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentRect: {fileID: 1699703705}
+  closeButton: {fileID: 1720841349}
 --- !u!1 &1683537796
 GameObject:
   m_ObjectHideFlags: 0
