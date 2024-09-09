@@ -50,4 +50,8 @@ public class Movement : MonoBehaviour {
 
         this.speed = speed;
     }
+
+    public void ResetPosition() {
+        transform.position = new Vector2(transform.position.x, 0);
+    }
 }
