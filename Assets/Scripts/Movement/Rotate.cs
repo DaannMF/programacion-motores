@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour {
 
-    private readonly Int16 degrees = 10;
+    private readonly Int16 degrees = 1;
     private Rigidbody2D rigidBody;
 
     [Header("Map Keys")]
@@ -18,14 +18,19 @@ public class Rotate : MonoBehaviour {
         RotatePlayer();
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other) {
+
+    }
+
     private void RotatePlayer() {
         // Rotate Left
-        if (Input.GetKeyDown(keyRotationLeft)) {
+        if (Input.GetKey(keyRotationLeft)) {
             this.rigidBody.AddTorque(degrees);
         }
 
         // Rotate Right
-        if (Input.GetKeyDown(keyRotationRight)) {
+        if (Input.GetKey(keyRotationRight)) {
             this.rigidBody.AddTorque(-degrees);
         }
     }

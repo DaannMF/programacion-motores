@@ -3,10 +3,10 @@ using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour {
     const float MAX_SPEED = 6f;
-    const float MIN_SPEED = 1.5f;
+    const float MIN_SPEED = 2.5f;
     private Rigidbody2D rigidBody;
 
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float speed = 2.5f;
 
     [Header("Map Keys")]
     [SerializeField] private KeyCode keyUp = KeyCode.W;
