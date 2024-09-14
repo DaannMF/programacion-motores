@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public Boolean IsPlayerTag(String tag) {
-        return tag.Equals(P1_GOAL_TAG) || tag.Equals(P2_GOAL_TAG);
+        return tag.Equals(P1_TAG) || tag.Equals(P2_TAG);
     }
 
     public Boolean IsPlayerGoalTag(String tag) {

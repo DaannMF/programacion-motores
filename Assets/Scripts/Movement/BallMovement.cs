@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour {
 
-
-
     private Rigidbody2D rigidBody;
 
     [SerializeField] private float speed = 40f;
