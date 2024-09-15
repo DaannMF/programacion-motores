@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class PowerUpPool : MonoBehaviour {
     [SerializeField] private GameObject powerUpPrefab;
-    [SerializeField] private Int16 poolSize = 3;
+    [SerializeField] private Int16 poolSize = 2;
 
     private List<GameObject> powerUpPool;
     private static PowerUpPool instance;
 
     public static PowerUpPool SharedInstance {
-        get { return instance; }
-    }
-
-    private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-        else {
-            Destroy(gameObject);
+        get {
+            if (instance == null) {
+                instance = FindObjectOfType<PowerUpPool>();
+            }
+            return instance;
         }
     }
 
@@ -27,19 +23,26 @@ public class PowerUpPool : MonoBehaviour {
     }
 
     private void LoadPool() {
-        for (int i = 0; i < poolSize; i++) {
+        this.powerUpPool = new List<GameObject>(this.poolSize);
+        for (int i = 0; i < this.poolSize; i++) {
             GameObject obstacle = Instantiate(powerUpPrefab);
             obstacle.SetActive(false);
-            powerUpPool.Add(obstacle);
+            this.powerUpPool.Add(obstacle);
         }
     }
 
     public GameObject GetPooledObject() {
-        for (int i = 0; i < poolSize; i++) {
-            if (!powerUpPool[i].activeInHierarchy) {
+        for (int i = 0; i < this.poolSize; i++) {
+            if (!this.powerUpPool[i].activeInHierarchy) {
                 return powerUpPool[i];
             }
         }
         return null;
+    }
+
+    public void DeactivateInstances() {
+        for (int i = 0; i < this.poolSize; i++) {
+            this.powerUpPool[i].SetActive(false);
+        }
     }
 }

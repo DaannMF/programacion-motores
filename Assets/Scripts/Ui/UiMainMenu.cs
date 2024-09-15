@@ -14,6 +14,7 @@ public class UiMainMenu : MonoBehaviour {
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject creditsPanel;
+    [SerializeField] private GameObject scorePanel;
 
 
     private void Awake() {
@@ -28,6 +29,7 @@ public class UiMainMenu : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (!pausePanel.activeSelf) {
                 pausePanel.SetActive(true);
+                scorePanel.SetActive(false);
             }
         }
     }
@@ -42,6 +44,7 @@ public class UiMainMenu : MonoBehaviour {
 
     private void OnPlayButtonClicked() {
         pausePanel.SetActive(false);
+        scorePanel.SetActive(true);
     }
 
     private void OnSettingsButtonClicked() {

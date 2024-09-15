@@ -4,7 +4,6 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour {
 
     private Rigidbody2D rigidBody;
-
     [SerializeField] private float speed = 40f;
 
     [Header("Map keys")]
@@ -18,22 +17,25 @@ public class BallMovement : MonoBehaviour {
         ResetPosition();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        String tag = other.gameObject.tag;
-        if (GameManager.Instance.IsPlayerGoalTag(tag)) {
-            GameManager.Instance.PlayerScored(tag);
-        }
-
-        if (GameManager.Instance.IsPlayerTag(tag)) {
-            this.speed++;
-        }
-    }
-
     private void Update() {
         if (!GameManager.Instance.GetIsPlaying()) {
             if (Input.GetKeyDown(keyLaunchBall)) {
                 Launch();
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (GameManager.Instance.IsPlayerGoalTag(other.gameObject.tag)) {
+            GameManager.Instance.PlayerScored(other.gameObject.tag);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (GameManager.Instance.IsPlayerTag(other.gameObject.tag)) {
+            GameManager.Instance.SetCurrentPlayer(other.gameObject);
+            ForcePower power = other.gameObject.GetComponent<ForcePower>();
+            this.rigidBody.velocity *= power.GetForce();
         }
     }
 

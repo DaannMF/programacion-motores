@@ -8,6 +8,8 @@ TagManager:
   - Player2
   - Player1Goal
   - Player2Goal
+  - Ball
+  - Obstacle
   layers:
   - Default
   - TransparentFX
