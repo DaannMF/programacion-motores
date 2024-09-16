@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour {
     const float MAX_SPEED = 6f;

@@ -41,8 +41,10 @@ public class ObstaclePool : MonoBehaviour {
     }
 
     public void DeactivateInstances() {
-        for (int i = 0; i < this.poolSize; i++) {
-            this.obstaclePool[i].SetActive(false);
+        if (this.obstaclePool is not null) {
+            for (int i = 0; i < this.poolSize; i++) {
+                this.obstaclePool[i].SetActive(false);
+            }
         }
     }
 }

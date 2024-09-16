@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class UiMainMenu : MonoBehaviour {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject scorePanel;
+    [SerializeField] private GameObject winTitle;
 
 
     private void Awake() {
@@ -26,12 +28,7 @@ public class UiMainMenu : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (!pausePanel.activeSelf) {
-                pausePanel.SetActive(true);
-                scorePanel.SetActive(false);
-            }
-        }
+        Pause();
     }
 
     private void OnDestroy() {
@@ -42,9 +39,22 @@ public class UiMainMenu : MonoBehaviour {
         exitButton.onClick.RemoveListener(OnExitButtonClicked);
     }
 
+    private void Pause() {
+        if (!winTitle.activeInHierarchy) {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                Time.timeScale = 0;
+                if (!pausePanel.activeSelf) {
+                    pausePanel.SetActive(true);
+                    scorePanel.SetActive(false);
+                }
+            }
+        }
+    }
+
     private void OnPlayButtonClicked() {
         pausePanel.SetActive(false);
         scorePanel.SetActive(true);
+        Time.timeScale = 1;
     }
 
     private void OnSettingsButtonClicked() {

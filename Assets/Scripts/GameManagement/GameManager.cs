@@ -55,10 +55,10 @@ public class GameManager : MonoBehaviour {
 
     public void PlayerScored(String tag) {
         if (tag.Equals(P1_GOAL_TAG)) {
-            Player1Scored();
+            Player2Scored();
         }
         else if (tag.Equals(P2_GOAL_TAG)) {
-            Player2Scored();
+            Player1Scored();
         }
 
         if (this.player1Score >= this.pointsToWin || this.player2Score >= this.pointsToWin) {
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
     public void ReStart() {
         this.player1Score = 0;
         this.player2Score = 0;
-        player1ScoreText.text = player2Score.ToString();
+        player1ScoreText.text = player1Score.ToString();
         player2ScoreText.text = player2Score.ToString();
         this.winTitlePanel.SetActive(false);
         Reset();

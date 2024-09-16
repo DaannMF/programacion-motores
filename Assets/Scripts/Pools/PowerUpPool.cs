@@ -41,8 +41,10 @@ public class PowerUpPool : MonoBehaviour {
     }
 
     public void DeactivateInstances() {
-        for (int i = 0; i < this.poolSize; i++) {
-            this.powerUpPool[i].SetActive(false);
+        if (this.powerUpPool is not null) {
+            for (int i = 0; i < this.poolSize; i++) {
+                this.powerUpPool[i].SetActive(false);
+            }
         }
     }
 }

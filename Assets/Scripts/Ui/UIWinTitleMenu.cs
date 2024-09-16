@@ -7,6 +7,6 @@ public class UIWinTitleMenu : MonoBehaviour {
 
     private void OnEnable() {
         String winner = GameManager.Instance.GetWinner();
-        this.winTitle.text = $"{winner.ToUpper()} Wins.";
+        this.winTitle.text = $"{winner.ToUpper()} WINS";
     }
 }
